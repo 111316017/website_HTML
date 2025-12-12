@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        :root {
+            --bs-font-sans-serif: 'Noto Sans TC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --bs-body-color: #3a322d;
+            --bs-body-bg: #f7f3ed;
+            --bs-primary: #c07a4c;
+            --bs-dark: #784e34;
+            --bs-light: #fdfaf5;
+            --bs-text-highlight: #ffebb5;
+        }
+
+        body {
+            font-family: var(--bs-font-sans-serif);
+            line-height: 1.7;
+            background-color: var(--bs-body-bg);
+            color: var(--bs-body-color);
+        }
+        
+        .navbar-custom {
+            background-color:var(--bs-dark) !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom .nav-link,
+        .navbar-custom .dropdown-item {
+            color: #ffffff !important;
+        }
+
+        .navbar-custom .nav-link:hover, 
+        .navbar-custom .dropdown-item:hover {
+            color: var(--bs-primary) !important;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-custom .nav-link.active {
+            color: var(--bs-primary) !important;
+        }
+
+        #hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--bs-light);
+            padding: 5rem 0;
+        }
+        
+        .quote-aside {
+            background-color: var(--bs-body-bg);
+            padding: 1.5rem;
+            border-left: 5px solid var(--bs-primary);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+        }
+        
+        .custom-card {
+            background-color: var(--bs-light);
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--bs-primary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            color: var(--bs-dark);
+        }
+        
+        mark {
+            background-color: var(--bs-text-highlight);
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            border: 5px solid var(--bs-primary);
+        }
+
+        .media-container audio, 
+        .media-container video {
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" role="navigation">
+            <div class="container-fluid container">
+                <a class="navbar-brand fs-4 fw-bold" href="#">游騰緒 | 個人網站</a> 
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#hero">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about-section">關於我</a></li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownWorks" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                專案/作品集
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownWorks">
+                                <li><a class="dropdown-item" href="#audio-works">音訊作品</a></li>
+                                <li><a class="dropdown-item" href="#video-works">視訊作品</a></li>
+                                <li><a class="dropdown-item" href="#image-works">圖片作品</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#works-section">查看全部</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="#other-section">其他資訊</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact-section">聯絡我</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5 pt-5">
+        
+        <section id="hero" class="mb-5 px-2">
+            <div class="row align-items-center">
+                
+                <div class="col-lg-7 order-lg-1 mb-4 mb-lg-0">
+                    <h1 class="display-4 fw-bold text-dark">游騰緒</h1>
+                    <p class="lead text-primary mb-4 ">
+                        國立台北教育大學 資訊科學系學生
+                    </p>
+                    
+                    <p class="fs-5">
+                        專注於<mark>數學</mark>能力的應用與資訊科學的學習。目前嘗試學習 <mark>C++</mark>, <mark>Python</mark>, <mark>Java</mark> 等程式語言。
+                    </p>
+                    
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#about-section" class="btn btn-primary btn-lg px-4">關於我</a>
+                        <a href="#works-section" class="btn btn-outline-dark btn-lg px-4">作品集</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 order-lg-2">
+                    <img src="asset/received_1102993270917276.jpeg" alt="游騰緒個人照片" class="profile-img shadow-lg">
+                    
+                    <aside class="quote-aside">
+                        <h5 class="text-dark fw-bold mb-2">我最喜歡的一句話</h5>
+                        <blockquote class="blockquote mb-0 small fst-italic">
+                            <p class="mb-0">請回頭看看自己進步了多少</p>
+                        </blockquote>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about-section" class="py-5">
+            <h2 class="section-title text-center">我的學習歷程與專長</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="card custom-card p-4">
+                        <h3 class="card-title text-dark">📖 關於我</h3>
+                        <p class="card-text">你可以透過此部落格，看到我的興趣、成果與現階段所學項目。</p>
+                        <p class="card-text">我現在是一名大學生，以科目來講，最擅長的是<mark>數學</mark>科，在國高中參加過不少數學的檢定考試。除此之外，我也喜歡閱讀書籍，從小說、漫畫到學科方面的都有。</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="card custom-card p-4">
+                        <h3 class="card-title text-primary">🥇 學習成就</h3>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-striped">
+                                <thead class="table-dark">
+                                    <tr><th>時間</th><th>成就</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>2020</td><td>機器人足球競賽第二名</td></tr>
+                                    <tr><td>2022</td><td>國際運算思維挑戰賽 (PR90)</td></tr>
+                                    <tr><td>2023/1</td><td>全國高中數理能力檢定中級</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card custom-card p-4">
+                        <h3 class="card-title text-primary">💻 掌握技能</h3>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr class="table-light"><th>技能</th><th>程度</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>數理能力</td><td>⭐⭐⭐⭐⭐</td></tr>
+                                    <tr><td>Python</td><td>⭐⭐⭐</td></tr>
+                                    <tr><td>C++</td><td>⭐⭐⭐</td></tr>
+                                    <tr><td>Java</td><td>⭐⭐</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="works-section" class="py-5">
+            <h2 class="section-title text-center">我的創作作品集</h2>
+            
+            <div class="row g-4">
+                
+                <div class="col-lg-4">
+                    <article id="audio-works" class="card custom-card p-3">
+                        <h3 class="card-title text-dark">🎶 音訊作品</h3>
+                        <p class="small text-muted">作品(一)</p>
+                        <audio controls class="w-100" aria-label="個人音樂作品1">
+                            <source src="asset/資二甲_111316017_游騰緒_1013 (1).mp3" type="audio/mpeg">
+                        </audio>
+                        <hr class="text-primary">
+                        <p class="small text-muted">作品(二)</p>
+                        <audio controls class="w-100" aria-label="個人音樂作品2">
+                            <source src="asset/Easy Breeze.mp3" type="audio/mpeg">
+                        </audio>
+                    </article>
+                </div>
+                
+                <div class="col-lg-8">
+                    <article id="video-works" class="card custom-card p-3">
+                        <h3 class="card-title text-dark">🎞️ 視訊作品</h3>
+                        <div class="media-container">
+                            <video controls class="shadow-sm rounded-3" aria-label="個人視訊作品">
+                                <source src="asset/YouCut_20251026_014609982.mp4" type="video/mp4">
+                                您的瀏覽器不支援 video 元素。
+                            </video>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 mt-5">
+                    <h3 class="section-title text-primary">🖼️ AI 圖片作品</h3>
+                    <div class="row g-4">
+                        <figure class="col-md-6">
+                            <div class="card custom-card p-3">
+                                <img src="asset/picture3.png" alt="AI生成的小島風景圖" loading="lazy" class="img-fluid shadow-sm rounded">
+                                <br>
+                                <img src="asset/picture1.png" alt="AI生成的小島風景圖" loading="lazy" class="img-fluid shadow-sm rounded">
+                                <figcaption class="mt-2 text-muted text-center">AI 生成作品: 小島</figcaption>
+                            </div>
+                        </figure>
+                        <figure class="col-md-6">
+                            <div class="card custom-card p-3">
+                                <img src="asset/picture2.png" alt="AI生成的能量飲料廣告圖片" loading="lazy" class="img-fluid shadow-sm rounded">
+                                <figcaption class="mt-2 text-muted text-center">AI 生成作品: 能量飲料廣告</figcaption>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="other-section" class="py-5">
+    <h2 class="section-title text-center">其他資訊</h2>
+    
+    <div class="row g-4 justify-content-center">
+        <div class="col-lg-6">
+            <div class="card custom-card p-4">
+                <h3 class="card-title text-dark">✨ 我的個人特質與興趣</h3>
+                
+                <details class="mb-4 p-3 border rounded">
+                    <summary class="fw-bold text-primary">點擊查看我的詳細檔案</summary>
+                    
+                    <div class="mt-3">
+                        <dl class="row">
+                            <dt class="col-sm-4 fw-bold">生日 / 星座</dt>
+                            <dd class="col-sm-8">2005 年 9 月 30 日 / 天秤座</dd>
+                            
+                            <dt class="col-sm-4 fw-bold">血型</dt>
+                            <dd class="col-sm-8">B型</dd>
+
+                            <dt class="col-sm-4 fw-bold">喜歡的角色</dt>
+                            <dd class="col-sm-8">咖波、小八</dd>
+
+                            <dt class="col-sm-4 fw-bold">我的動漫庫</dt>
+                            <dd class="col-sm-8">名偵探柯南、吉伊卡哇</dd>
+                            
+                            <dt class="col-sm-4 fw-bold">其他喜好</dt>
+                            <dd class="col-sm-8">貓貓超可愛</dd>
+                        </dl>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-lg-6" id="contact-section">
+            <div class="card custom-card p-4 text-center">
+                <h3 class="card-title text-dark">📧 聯絡我</h3>
+                <p class="lead mb-4">歡迎透過電子郵件與我聯繫。</p>
+                <a href="mailto:s111316017@stu.ntue.edu.tw" class="btn btn-primary btn-lg w-100">發送郵件給我</a>
+            </div>
+        </div>
+
+        <div class="col-12 mt-5">
+            <h3 class="section-title">📍 我的位置資訊(國立台北教育大學)</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.176465809716!2d121.5422453149959!3d25.02989108398033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a967f8d5513f%3A0x6a0539151c7d242c!2z5ZyL56uL6Ie65Zac5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1634544000000" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="國立台北教育大學位置地圖" class="shadow-sm rounded-3">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer class="text-center py-4 bg-dark text-white">
+        <div class="container">
+            <p class="mb-1">聯絡我們：<a href="mailto:s111316017@stu.ntue.edu.tw" class="text-primary">s111316017@stu.ntue.edu.tw</a></p>
+            <time datetime="2025-12-24" class="text-muted">最後更新日期：2025年12月12日</time>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
